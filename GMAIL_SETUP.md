@@ -26,9 +26,10 @@ Use the Gmail address you want to send emails from (e.g., `yourname@gmail.com`)
 
    | Key | Value | Description |
    |-----|-------|-------------|
-   | `GMAIL_USER` | `yourname@gmail.com` | Your Gmail address |
-   | `GMAIL_APP_PASSWORD` | `xxxx xxxx xxxx xxxx` | The 16-character app password from Step 1 |
-   | `TO_EMAIL` | `recipient@gmail.com` | (Optional) Email address to receive form submissions. If not set, uses `GMAIL_USER` |
+   | `GMAIL_USER` | `yourname@gmail.com` | Your Gmail address (Required) |
+   | `GMAIL_APP_PASSWORD` | `xxxx xxxx xxxx xxxx` | The 16-character app password from Step 1 (Required) |
+   | `TO_EMAIL` | `recipient@gmail.com` | (Optional) Primary email address to receive form submissions. If not set, uses `GMAIL_USER` |
+   | `FORWARD_EMAIL` | `email1@gmail.com, email2@gmail.com` | (Optional) Additional email addresses to forward form submissions to. Separate multiple emails with commas |
 
 ## Step 4: Redeploy Your Site
 
@@ -43,7 +44,20 @@ After adding the environment variables:
 1. Visit your deployed site
 2. Navigate to the Contact page
 3. Fill out and submit the form
-4. Check the email inbox specified in `TO_EMAIL` (or `GMAIL_USER` if `TO_EMAIL` is not set)
+4. Check the email inbox(es) - emails will be sent to `TO_EMAIL` (or `GMAIL_USER` if `TO_EMAIL` is not set) and any addresses in `FORWARD_EMAIL`
+
+## Email Forwarding
+
+You can forward form submissions to multiple email addresses by setting the `FORWARD_EMAIL` environment variable:
+
+**Example:**
+- `FORWARD_EMAIL`: `team@visualloop.com, manager@visualloop.com`
+
+This will send the form submission to:
+1. The primary recipient (`TO_EMAIL` or `GMAIL_USER`)
+2. All email addresses listed in `FORWARD_EMAIL`
+
+**Note:** Separate multiple email addresses with commas. Duplicate addresses are automatically removed.
 
 ## Troubleshooting
 
