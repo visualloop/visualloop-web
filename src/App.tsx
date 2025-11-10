@@ -7,12 +7,14 @@ import { Portfolio } from '@/pages/Portfolio'
 import { Services } from '@/pages/Services'
 import { Contact } from '@/pages/Contact'
 import { useTheme } from '@/lib/use-theme'
+import { useSEO } from '@/lib/use-seo'
 import type { Page } from '@/types/project'
 
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   useTheme() // Initialize theme hook
+  useSEO(currentPage) // Update SEO metadata based on current page
 
   const renderPage = () => {
     switch (currentPage) {

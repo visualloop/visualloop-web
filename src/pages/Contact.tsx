@@ -1,3 +1,4 @@
+import { Youtube, Instagram } from 'lucide-react'
 import { ContactForm } from '@/components/forms/ContactForm'
 import { GradientMesh } from '@/components/ui/gradient-mesh'
 
@@ -42,16 +43,27 @@ export function Contact() {
           {/* Social Links */}
           <div className="mt-12 pt-8 border-t border-border text-center">
             <p className="text-sm text-muted-foreground mb-6">Connect with us:</p>
-            <div className="flex gap-6 justify-center">
-              {['Instagram', 'YouTube', 'LinkedIn'].map((platform) => (
-                <button
-                  key={platform}
-                  className="text-muted-foreground hover:text-foreground transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background rounded-md px-4 py-2 text-sm font-medium"
-                  aria-label={`Visit our ${platform} page`}
-                >
-                  {platform}
-                </button>
-              ))}
+            <div className="flex gap-6 justify-center items-center">
+              <a
+                href="https://www.youtube.com/@visualloopofficial/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background rounded-md p-3 flex items-center gap-2"
+                aria-label="Visit our YouTube channel"
+              >
+                <Youtube className="h-5 w-5" />
+                <span className="text-sm font-medium">YouTube</span>
+              </a>
+              <a
+                href="https://instagram.com/visualloopfilms/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background rounded-md p-3 flex items-center gap-2"
+                aria-label="Visit our Instagram page"
+              >
+                <Instagram className="h-5 w-5" />
+                <span className="text-sm font-medium">Instagram</span>
+              </a>
             </div>
           </div>
         </div>

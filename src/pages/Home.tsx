@@ -62,9 +62,9 @@ export function Home() {
           </div>
 
           {/* Main Heading */}
-          <h2 className="font-extrabold pt-4 text-foreground mix-blend-overlay tracking-tighter text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl mb-6">
+          <h1 className="font-extrabold pt-4 text-foreground mix-blend-overlay tracking-tighter text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl mb-6">
             Crafting <br /> Stories in Motion
-          </h2>
+          </h1>
 
           {/* Description and CTA */}
           <div className="space-y-6 z-10 pt-8 flex justify-center items-center flex-col text-center max-w-2xl mx-auto">
@@ -133,6 +133,7 @@ export function Home() {
                               <img
                                 src={project.thumbnail || '/posters/TS_JIJI_POSTER.webp'}
                                 alt={project.title}
+                                loading="lazy"
                                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                                 onError={(e) => {
                                   const fallbackImages = [
